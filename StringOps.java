@@ -56,6 +56,19 @@ public class StringOps {
         String newString = "";
         int firstSpaceAt = string.indexOf(" ");
         boolean isAfterSpace = false;
+        for(int i = 0;i<string.length();i++)
+        {
+            if(string.charAt(i)!= ' ')
+            {
+                if(i>firstSpaceAt)
+                {
+                    string = string.substring(firstSpaceAt);
+                    firstSpaceAt = string.indexOf(" ");
+                }
+                break;
+            }
+            
+        }
         for(int i =0;i<string.length();i++)
         {
             if (i<firstSpaceAt) {
