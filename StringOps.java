@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class StringOps {
     ////////////////////////////////////////////////////////////
     //////                                               ///////
@@ -22,21 +24,98 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+        System.out.println(Arrays.toString(allIndexOf("hello world dada fagf", 'l')));
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        String newString = "";
+        for(int i =0;i<string.length();i++)
+        {
+            if(string.charAt(i) == 'u'||string.charAt(i) == 'i'||string.charAt(i) == 'o'||string.charAt(i) == 'a'||string.charAt(i) == 'e')
+            {
+                newString += (char)((int)string.charAt(i)-32);
+            }
+            else if(string.charAt(i) != ' '){
+                if ((int)string.charAt(i) <= 90) {
+                    newString += (char)((int)string.charAt(i)+32);
+                }
+                else{
+                    newString+=string.charAt(i);
+                }
+            }
+            
+            
+        }
+        return newString;
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        String newString = "";
+        int firstSpaceAt = string.indexOf(" ");
+        boolean isAfterSpace = false;
+        for(int i =0;i<string.length();i++)
+        {
+            if (i<firstSpaceAt) {
+                if ((int)string.charAt(i) <= 90) {
+                    newString += (char)((int)string.charAt(i)+32);
+                }
+                else{
+                    newString+=string.charAt(i);
+                }
+            }
+            else
+            {
+                if(string.charAt(i) == ' ')
+                {
+                    isAfterSpace = true;
+                }
+                else if(isAfterSpace)
+                {
+                    isAfterSpace = false;
+                    if ((int)string.charAt(i) > 90) {
+                        newString += (char)((int)string.charAt(i)-32);
+                    }
+                    else{
+                        newString+=string.charAt(i);
+                    }
+                }
+                else
+                {
+                    if ((int)string.charAt(i) <= 90) {
+                        newString += (char)((int)string.charAt(i)+32);
+                    }
+                    else{
+                        newString+=string.charAt(i);
+                    }
+                }
+
+            }
+                
+        
+            
+            
+        }
+        return newString;
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int length = 0;
+        int counter = 0;
+        for(int i = 0; i < string.length();i++)
+        {
+            length += (string.charAt(i) == chr)? 1:0;
+        }
+        int[] array = new int[length];
+        for(int i =0;i<string.length();i++)
+        {
+            if(string.charAt(i) == chr)
+                {
+                    array[counter] = i;
+                    counter++;
+                }
+                
+            
+        }
+        return array;
     }
 }
