@@ -24,7 +24,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        System.out.println(camelCase(" two aim"));
+        System.out.println(capVowelsLowRest("owo aim"));
     }
 
     public static String capVowelsLowRest (String string) {
@@ -36,7 +36,7 @@ public class StringOps {
                 newString += (char)((int)string.charAt(i)-32);
             }
             else if(string.charAt(i) != ' '){
-                if ((int)string.charAt(i) <= 90) {
+                if ((int)string.charAt(i) <= 90 && string.charAt(i)!= 'O'&& string.charAt(i)!= 'I'&& string.charAt(i)!= 'A'&& string.charAt(i)!= 'E'&& string.charAt(i)!= 'U') {
                     newString += (char)((int)string.charAt(i)+32);
                 }
                 else{
