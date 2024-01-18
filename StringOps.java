@@ -42,6 +42,10 @@ public class StringOps {
                     newString+=string.charAt(i);
                 }
             }
+            else
+            {
+                newString += " ";
+            }
             
             
         }
