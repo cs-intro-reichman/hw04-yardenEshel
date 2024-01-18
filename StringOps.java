@@ -24,7 +24,6 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(allIndexOf("hello world dada fagf", 'l')));
     }
 
     public static String capVowelsLowRest (String string) {
