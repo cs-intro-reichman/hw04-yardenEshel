@@ -24,6 +24,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
+        System.out.println(camelCase(" two aim"));
     }
 
     public static String capVowelsLowRest (String string) {
@@ -62,10 +63,11 @@ public class StringOps {
             {
                 if(i>firstSpaceAt)
                 {
-                    string = string.substring(firstSpaceAt);
+                    string = string.substring(firstSpaceAt+1);
                     firstSpaceAt = string.indexOf(" ");
+                    
                 }
-                break;
+                i = string.length();
             }
             
         }
